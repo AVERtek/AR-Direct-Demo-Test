@@ -42,6 +42,7 @@
     ar 
     ar-modes="scene-viewer webxr quick-look" 
     camera-controls 
+    ar-preferred 
     auto-rotate 
     autoplay 
     poster="images/under-construction2.png" 
@@ -55,6 +56,14 @@
   <button id="play-audio" onclick="document.getElementById('audio').play()">Play Audio</button>
 
   <button id="url-button" onclick="window.location.href='https://avertek.github.io/Construction_Demo_AR-Direct_2/'">Go to URL</button>
+
+  <script>
+  window.addEventListener("load", () => {
+    var modelViewer = document.querySelector('model-viewer');
+    console.log("Can activate AR: " + modelViewer.canActivateAR);
+    modelViewer.activateAR();
+  });
+</script>
 
   <script>
     const modelViewer = document.querySelector('model-viewer');
